@@ -39,3 +39,37 @@ npm i react-id-generator
 npm i react-native-svg
 ```
 
+## Construir apk con expo
+```
+npm install -g eas-cli
+eas login
+eas whoami
+eas build:configure
+
+eas build -p android --profile preview
+```
+
+### Formato de eas.json
+```
+{
+  "cli": {
+    "version": ">= 10.2.2"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {}
+  }
+}
+```
+
